@@ -1,0 +1,20 @@
+Basic Physics of Semiconductors - Question 32
+
+Iin 0 sense DC 0
+VS1 sense out DC 0
+D1 out 0 diode
+R1 out 0 1k
+.model diode D(IS=0.5f)
+
+.control
+dc Iin 0 2m 2u
+plot v(out)
+
+* Finding where the current flowing through D1 and R1 are equal
+let IR = v(out) / 1k
+let ID = i(VS1) - IR
+let diff = IR - ID
+plot diff
+.endc
+
+.end

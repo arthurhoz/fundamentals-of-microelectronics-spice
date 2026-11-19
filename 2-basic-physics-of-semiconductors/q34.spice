@@ -1,0 +1,19 @@
+Basic Physics of Semiconductors - Question 34
+
+Vin in 0 DC 1
+R1 in out 500
+D1 out 0 diode
+.model diode D(IS=0.5f)
+
+.control
+dc Vin -2 2 4m
+plot v(out)
+
+* Finding where the voltage drop across R1 and D1 are equal.
+let Vr1 = v(in) - v(out)
+let Vd1 = v(out)
+let diff = Vr1 - Vd1
+plot diff
+.endc
+
+.end

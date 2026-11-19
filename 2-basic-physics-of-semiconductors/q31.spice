@@ -1,0 +1,12 @@
+Basic Physics of Semiconductors - Question 31
+
+Iin 0 out DC 0
+D1 out 0 diode
+.model diode D(IS=0.5f)
+
+.control
+dc Iin 0 2m 2u
+plot v(out)
+.endc
+
+.end

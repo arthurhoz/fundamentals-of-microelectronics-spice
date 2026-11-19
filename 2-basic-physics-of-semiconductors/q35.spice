@@ -1,0 +1,20 @@
+Basic Physics of Semiconductors - Question 35
+
+Vin in 0 2
+R1 in out 500
+D1 out 0 diode
+.model diode D(IS=0.5f)
+
+.control
+* Iterating through the values of R1 to find where the limit of Vout < 0.7 occurs.
+let R = 4k
+while R le 5k
+  alter R1 R
+  op
+  echo R1=$&R
+  print v(out)
+  let R = R + 50
+end
+.endc
+
+.end

@@ -1,0 +1,20 @@
+Basic Physics of Semiconductors - Question 33
+
+Iin 0 out 2m
+D1 out 0 diode
+R1 out 0 1k
+.model diode D(IS=0.5f)
+
+.control
+* Sweep resistor value to find the point where the current through R1 is 1m
+let R = 700
+while R le 750
+  alter R1 R
+  op
+  echo R1=$&r
+  print @D1[id]
+  let R = R + 1
+end
+.endc
+
+.end
