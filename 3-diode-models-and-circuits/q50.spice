@@ -1,0 +1,15 @@
+Diode Models and Circuits - Question 50
+
+VIN in 0 2
+D1 in out diode
+R1 out 0 240
+
+.model diode D(IS=0.5f CJO=1p VO=0.8)
+
+.control
+op
+let i = v(out) / 240
+print i
+.endc
+
+.end

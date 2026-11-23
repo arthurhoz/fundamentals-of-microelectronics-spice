@@ -1,0 +1,17 @@
+Diode Models and Circuits - Question 54
+
+VIN in 0 PULSE(0 4 0 5m 5m 1)
+R1 in out 2k
+D1 out x diode
+VB1 x 0 2
+D2 out y diode
+VB2 y 0 1
+
+.model diode D(IS=0.5f CJO=1p VO=0.8)
+
+.control
+tran 10u 10m
+plot v(out)
+.endc
+
+.end

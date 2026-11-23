@@ -1,0 +1,16 @@
+Diode Models and Circuits - Question 52
+
+VIN in 0 SIN(0 5 60)
+D1 in out diode
+C1 out 0 1u
+R1 out 0 100
+
+.model diode D(IS=0.5f CJO=1p VO=0.8)
+
+.control
+tran 10u 25m
+plot v(out) 
+plot -i(VIN)
+.endc
+
+.end

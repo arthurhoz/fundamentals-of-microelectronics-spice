@@ -1,0 +1,20 @@
+Diode Models and Circuits - Question 53
+
+VCC cc 0 2.5
+VEE ee 0 -2.5
+VIN in 0 DC 1
+R1 cc x 1k
+R2 y ee 1k
+D1 out y diode
+D2 x in diode
+D3 x out diode
+D4 in y diode
+
+.model diode D(IS=0.5f CJO=1p VO=0.8)
+
+.control
+dc VIN -2 2 2m
+plot v(in) - v(out)
+.endc
+
+.end

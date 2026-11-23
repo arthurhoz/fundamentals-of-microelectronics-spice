@@ -1,0 +1,17 @@
+Diode Models and Circuits - Question 51
+
+VIN in 0 DC 1
+R1 in x 500
+D1 x out diode
+D2 0 x diode
+R2 out 0 1k
+
+.model diode D(IS=0.5f CJO=1p VO=0.8)
+
+.control
+dc VIN -2 2 2m
+plot v(out)
+plot -i(VIN)
+.endc
+
+.end
