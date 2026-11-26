@@ -1,0 +1,22 @@
+Physics of Bipolar Transistors - Question 61
+
+VIN in 0 DC 1
+VCC cc 0 2.5
+R1 cc out 1k
+Q1 cc in emitter bjt
+VB base 0 1.5
+Q2 out base emitter bjt
+R2 emitter 0 1k
+
+.model bjt NPN(BF=100, IS=0.5f, VAF=5)
+
+.control
+dc VIN 0 2.5 1m
+* Finding where IC1 is equal to IC2.
+let IC2 = (v(cc) - v(out)) / 1k
+let IC1 = -i(VCC) - IC2
+let diff = IC1 - IC2
+plot diff
+.endc
+
+.end

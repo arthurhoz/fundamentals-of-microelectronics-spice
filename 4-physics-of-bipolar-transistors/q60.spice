@@ -1,0 +1,19 @@
+Physics of Bipolar Transistors - Question 60
+
+VIN in 0 DC 1
+VCC cc 0 2.5
+RC cc out 1k
+Q1 out in emitter nbjt
+Q2 0 0 emitter cc pbjt
+
+.model nbjt NPN(BF=100, IS=0.5f, VAF=5)
+.model pbjt PNP(BG=50, IS=0.8f, VAF=3.5)
+
+.control
+dc VIN 0 2 1m
+let VBE = v(in) - v(emitter)
+let gm = deriv(-i(VCC)) / deriv(VBE)
+plot gm
+.endc
+
+.end

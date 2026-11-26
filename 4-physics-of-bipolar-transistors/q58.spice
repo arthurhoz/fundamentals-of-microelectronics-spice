@@ -1,0 +1,16 @@
+Physics of Bipolar Transistors - Question 58
+
+VIN in 0 DC 1
+VCC cc 0 2.5
+RE out 0 1k
+Q1 cc in out 0 bjt
+
+.model bjt NPN(BF=100, IS=0.5f, VAF=5)
+
+.control
+dc VIN 0 2.5 1m
+plot v(out)
+plot -i(VCC)
+.endc
+
+.end

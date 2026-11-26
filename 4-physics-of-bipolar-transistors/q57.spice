@@ -1,0 +1,20 @@
+Physics of Bipolar Transistors - Question 57
+
+VIN in 0 DC 1
+VB base 0 0.9
+VCC cc 0 2.5
+RC cc out 1k
+Q1 out base in 0 bjt
+
+.model bjt NPN(BF=100, IS=0.5f, VAF=5)
+
+.control
+dc VIN 0 2.5 1m
+plot v(out)
+* Finding where the edge of saturation occours
+let VBE = v(base) - v(in)
+let diff = v(out) - VBE
+plot diff
+.endc
+
+.end
